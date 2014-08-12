@@ -10,13 +10,17 @@
 
 int main(int argc, const char * argv[])
 {
-
-    @autoreleasepool {
-        
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
-    }
+    float exchangeRate = 1.2500;
+    double budget = 1000.00;
+    double euroTransaction;
+    
+    budget -= 100;
+    
+    NSLog(@"Converting 100 US dollars into euros leaves $%1.2f", budget);
+    euroTransaction = 100*exchangeRate;
+    budget -= euroTransaction;
+    
+    NSLog(@"Charging 100 euros leaves $%.2f", budget);
+    
     return 0;
 }
-
