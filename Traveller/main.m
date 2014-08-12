@@ -16,14 +16,8 @@ typedef struct {
 
 budget vacation;
 
-void spendDollars(double dollars) {
-    vacation.budget -= dollars;
-}
-
-void chargeEuros(double euros) {
-    vacation.euroTransaction = euros * vacation.exchangeRate;
-    vacation.budget -= vacation.euroTransaction;
-}
+void spendDollars(double dollars);
+void chargeEuros(double euros);
 
 int main(int argc, const char * argv[]) {
     vacation.exchangeRate = 1.2500;
@@ -38,4 +32,13 @@ int main(int argc, const char * argv[]) {
     NSLog(@"Charging €%.2f euros leaves $%.2f", numberEuros, vacation.budget);
     
     return 0;
+}
+
+void spendDollars(double dollars) {
+    vacation.budget -= dollars;
+}
+
+void chargeEuros(double euros) {
+    vacation.euroTransaction = euros * vacation.exchangeRate;
+    vacation.budget -= vacation.euroTransaction;
 }
