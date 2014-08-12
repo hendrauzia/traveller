@@ -2,25 +2,29 @@
 //  main.m
 //  Traveller
 //
-//  Created by Video One on 8/7/14.
+//  Created by Hendra Uzia on 8/7/14.
 //  Copyright (c) 2014 Hendra Uzia. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+struct budget {
+    float exchangeRate;
+    double budget;
+    double euroTransaction;
+};
 
 int main(int argc, const char * argv[])
 {
-    float exchangeRate = 1.2500;
-    double budget = 1000.00;
-    double euroTransaction;
+    struct budget vacation;
+    vacation.exchangeRate = 1.2500;
+    vacation.budget = 1000.00;
     
-    budget -= 100;
+    vacation.budget -= 100;
+    NSLog(@"Converting 100 US dollars into euros leaves $%.2f", vacation.budget);
     
-    NSLog(@"Converting 100 US dollars into euros leaves $%1.2f", budget);
-    euroTransaction = 100*exchangeRate;
-    budget -= euroTransaction;
-    
-    NSLog(@"Charging 100 euros leaves $%.2f", budget);
-    
+    vacation.euroTransaction = 100 * vacation.exchangeRate;
+    vacation.budget -= vacation.euroTransaction;
+    NSLog(@"Charging 100 euros leaves $%.2f", vacation.budget);
+
     return 0;
 }
