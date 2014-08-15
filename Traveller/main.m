@@ -14,10 +14,10 @@
     double budget;
     double transaction;
 }
-@end
 
-void spend(Budget *myBudget, double dollars);
-void charge(Budget *myBudget, double currency);
+- (void) spend: (double) dollars;
+- (void) charge: (double) currency;
+@end
 
 int main(int argc, const char * argv[]) {
     Budget *europe = [Budget new];
@@ -33,29 +33,27 @@ int main(int argc, const char * argv[]) {
     double dollarsInEngland = 100;
     double pounds = 100;
     
-    spend(europe, dollarsInEurope);
+    [europe spend:dollarsInEurope];
     NSLog(@"Converting $%.2f US dollars into euros leaves $%.2f", dollarsInEurope, europe->budget);
     
-    charge(europe, euros);
+    [europe charge:euros];
     NSLog(@"Charging €%.2f euros leaves $%.2f", euros, europe->budget);
     
-    spend(england, dollarsInEngland);
+    [england spend:dollarsInEngland];
     NSLog(@"Converting $%.2f US dollars into pounds leaves $%.2f", dollarsInEngland, england->budget);
     
-    charge(england, pounds);
+    [england charge:pounds];
     NSLog(@"Charging €%.2f pounds leaves $%.2f", pounds, england->budget);
     
     return 0;
 }
 
 @implementation Budget
+- (void) spend: (double) dollars {
+    budget -= dollars;
+}
+- (void) charge: (double) currency {
+    transaction = currency * rate;
+    budget -= transaction;
+}
 @end
-
-void spend(Budget *myBudget, double dollars) {
-    myBudget->budget -= dollars;
-}
-
-void charge(Budget *myBudget, double currency) {
-    myBudget->transaction = currency * myBudget->rate;
-    myBudget->budget -= myBudget->transaction;
-}
