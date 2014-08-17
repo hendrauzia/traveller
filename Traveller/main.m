@@ -15,7 +15,6 @@
 }
 
 - (void) setBudget: (double) budgetValue withRate: (float) rateValue;
-- (double) getBudget;
 - (void) spend: (double) dollars;
 - (void) charge: (double) currency;
 @end
@@ -33,16 +32,10 @@ int main(int argc, const char * argv[]) {
     double pounds = 100;
     
     [europe spend:dollarsInEurope];
-    NSLog(@"Converting $%.2f US dollars into euros leaves $%.2f", dollarsInEurope, [europe getBudget]);
-    
     [europe charge:euros];
-    NSLog(@"Charging €%.2f euros leaves $%.2f", euros, [europe getBudget]);
-    
+
     [england spend:dollarsInEngland];
-    NSLog(@"Converting $%.2f US dollars into pounds leaves $%.2f", dollarsInEngland, [england getBudget]);
-    
     [england charge:pounds];
-    NSLog(@"Charging €%.2f pounds leaves $%.2f", pounds, [england getBudget]);
     
     return 0;
 }
@@ -52,14 +45,13 @@ int main(int argc, const char * argv[]) {
     budget = budgetValue;
     rate = rateValue;
 }
-- (double) getBudget {
-    return budget;
-}
 - (void) spend: (double) dollars {
     budget -= dollars;
+    NSLog(@"Converting $%.2f into foreign currency leaves $%.2f", dollars, budget);
 }
 - (void) charge: (double) currency {
     transaction = currency * rate;
     budget -= transaction;
+    NSLog(@"Charging %.2f in foreign currency leaves $%.2f", currency, budget);
 }
 @end
