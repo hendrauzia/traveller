@@ -7,17 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Budget : NSObject {
-    double budget;
-    float rate;
-    double transaction;
-}
-
-- (void) setBudget: (double) budgetValue withRate: (float) rateValue;
-- (void) spend: (double) dollars;
-- (void) charge: (double) currency;
-@end
+#import "Budget.h"
 
 int main(int argc, const char * argv[]) {
     Budget *europe = [Budget new];
@@ -39,19 +29,3 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
-
-@implementation Budget
-- (void) setBudget: (double) budgetValue withRate: (float) rateValue {
-    budget = budgetValue;
-    rate = rateValue;
-}
-- (void) spend: (double) dollars {
-    budget -= dollars;
-    NSLog(@"Converting $%.2f into foreign currency leaves $%.2f", dollars, budget);
-}
-- (void) charge: (double) currency {
-    transaction = currency * rate;
-    budget -= transaction;
-    NSLog(@"Charging %.2f in foreign currency leaves $%.2f", currency, budget);
-}
-@end
