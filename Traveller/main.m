@@ -16,11 +16,8 @@ int main(int argc, const char * argv[]) {
 
     NSNumber *dollarsInEurope = @100;
     NSNumber *anotherDollarsInEurope = @200;
-    NSMutableArray *europeTransactions = [[NSMutableArray alloc] initWithCapacity:1 ];
-    
-    [europeTransactions addObject:dollarsInEurope];
-    [europeTransactions addObject:anotherDollarsInEurope];
-    
+    NSArray *europeTransactions = @[dollarsInEurope, anotherDollarsInEurope];
+        
     Budget *europe = [Budget new];
     [europe setBudget:@1000.00 withRate:@1.2500];
     [europe charge:euros];
