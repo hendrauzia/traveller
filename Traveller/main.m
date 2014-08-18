@@ -13,13 +13,13 @@ int main(int argc, const char * argv[]) {
     Budget *europe = [Budget new];
     Budget *england = [Budget new];
 
-    [europe setBudget:1000.00 withRate:1.2500];
-    double dollarsInEurope = 100;
-    double euros = 100;
-
-    [england setBudget:2000.00 withRate:1.5000];
-    double dollarsInEngland = 100;
-    double pounds = 100;
+    [europe setBudget:@1000.00 withRate:@1.2500];
+    NSNumber *dollarsInEurope = @100;
+    NSNumber *euros = @100;
+    
+    [england setBudget:@2000.00 withRate:@1.5000];
+    NSNumber *dollarsInEngland = @100;
+    NSNumber *pounds = @100;
     
     [europe spend:dollarsInEurope];
     [europe charge:euros];

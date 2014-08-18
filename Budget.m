@@ -9,17 +9,19 @@
 #import "Budget.h"
 
 @implementation Budget
-- (void) setBudget: (double) budgetValue withRate: (float) rateValue {
+- (void) setBudget: (NSNumber*) budgetValue withRate: (NSNumber*) rateValue {
     budget = budgetValue;
     rate = rateValue;
 }
-- (void) spend: (double) dollars {
-    budget -= dollars;
-    NSLog(@"Converting $%.2f into foreign currency leaves $%.2f", dollars, budget);
+- (void) spend: (NSNumber*) dollars {
+    budget = @([budget doubleValue] - [dollars doubleValue]);
+    
+    NSLog(@"Converting $%.2f into foreign currency leaves $%.2f", [dollars doubleValue], [budget doubleValue]);
 }
-- (void) charge: (double) currency {
-    transaction = currency * rate;
-    budget -= transaction;
-    NSLog(@"Charging %.2f in foreign currency leaves $%.2f", currency, budget);
+- (void) charge: (NSNumber*) currency {
+    transaction = @([currency doubleValue] * [rate doubleValue]);
+    budget = @([budget doubleValue] - [transaction doubleValue]);
+    
+    NSLog(@"Charging %.2f in foreign currency leaves $%.2f", [currency doubleValue], [budget doubleValue]);
 }
 @end
