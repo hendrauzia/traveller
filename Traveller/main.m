@@ -8,27 +8,44 @@
 
 #import <Foundation/Foundation.h>
 #import "Budget.h"
+#import "Transaction.h"
 
 int main(int argc, const char * argv[]) {
-    NSNumber *pounds = @100;
-    NSNumber *euros = @100;
-    NSNumber *dollarsInEngland = @100;
+    Transaction *dollarsInEurope = [Transaction new];
+    [dollarsInEurope create:100 ofType:cash];
+    
+    Transaction *anotherDollarsInEurope = [Transaction new];
+    [anotherDollarsInEurope create:200 ofType:cash];
 
-    NSNumber *dollarsInEurope = @100;
-    NSNumber *anotherDollarsInEurope = @200;
-    NSArray *europeTransactions = @[dollarsInEurope, anotherDollarsInEurope];
-        
+    Transaction *chargedInEurope = [Transaction new];
+    [chargedInEurope create:100 ofType:charge];
+    
+    NSArray *europeTransactions = @[dollarsInEurope, anotherDollarsInEurope, chargedInEurope];
+
     Budget *europe = [Budget new];
     [europe setBudget:@1000.00 withRate:@1.2500];
-    [europe charge:euros];
-    for (NSNumber *transaction in europeTransactions) {
-        [europe spend:transaction];
+    
+    for (Transaction *transaction in europeTransactions) {
+        switch([transaction type]) {
+            case cash:
+                [europe spend:[transaction amount]];
+                break;
+            case charge:
+                [europe charge:[transaction amount]];
+                break;
+        }
     }
+
+    Transaction *dollarsInEngland = [Transaction new];
+    [dollarsInEngland create:100 ofType:cash];
+    
+    Transaction *chargedInEngland = [Transaction new];
+    [chargedInEngland create:100 ofType:charge];
 
     Budget *england = [Budget new];
     [england setBudget:@2000.00 withRate:@1.5000];
-    [england spend:dollarsInEngland];
-    [england charge:pounds];
-    
+    [england spend:[dollarsInEngland amount]];
+    [england charge:[chargedInEngland amount]];
+
     return 0;
 }

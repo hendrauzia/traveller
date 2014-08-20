@@ -11,6 +11,7 @@
 		851E4B7819932D79008AC828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 851E4B7719932D79008AC828 /* main.m */; };
 		851E4B7C19932D79008AC828 /* Traveller.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 851E4B7B19932D79008AC828 /* Traveller.1 */; };
 		E6D07B7C19A117DB001E2F41 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D07B7B19A117DB001E2F41 /* Budget.m */; };
+		E6D07B8219A3899F001E2F41 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D07B8119A3899F001E2F41 /* Transaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		851E4B7B19932D79008AC828 /* Traveller.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Traveller.1; sourceTree = "<group>"; };
 		E6D07B7A19A117DB001E2F41 /* Budget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Budget.h; sourceTree = "<group>"; };
 		E6D07B7B19A117DB001E2F41 /* Budget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Budget.m; sourceTree = "<group>"; };
+		E6D07B8019A3899F001E2F41 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		E6D07B8119A3899F001E2F41 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 			children = (
 				E6D07B7A19A117DB001E2F41 /* Budget.h */,
 				E6D07B7B19A117DB001E2F41 /* Budget.m */,
+				E6D07B8019A3899F001E2F41 /* Transaction.h */,
+				E6D07B8119A3899F001E2F41 /* Transaction.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D07B8219A3899F001E2F41 /* Transaction.m in Sources */,
 				E6D07B7C19A117DB001E2F41 /* Budget.m in Sources */,
 				851E4B7819932D79008AC828 /* main.m in Sources */,
 			);
