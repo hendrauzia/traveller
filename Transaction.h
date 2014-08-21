@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum {cash, charge} transactionType;
+#import "Budget.h"
 
 @interface Transaction : NSObject {
-    transactionType type;
+    Budget *budget;
     NSNumber *amount;
 }
 
-- (void) create: (double) theAmount ofType: (transactionType) aType;
-- (NSNumber *) amount;
-- (transactionType) type;
+- (void) create: (double) amountValue for: (Budget*) budgetValue;
+- (void) spend;
+- (void) trackSpending: (double) amountValue;
 
 @end

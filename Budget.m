@@ -12,6 +12,8 @@
 - (void) setBudget: (NSNumber*) budgetValue withRate: (NSNumber*) rateValue {
     budget = budgetValue;
     rate = rateValue;
+    
+    NSLog(@"Allocating $%.2f for %@", [budget doubleValue], [self className]);
 }
 - (void) spend: (NSNumber*) dollars {
     budget = @([budget doubleValue] - [dollars doubleValue]);

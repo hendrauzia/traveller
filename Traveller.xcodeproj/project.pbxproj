@@ -12,6 +12,8 @@
 		851E4B7C19932D79008AC828 /* Traveller.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 851E4B7B19932D79008AC828 /* Traveller.1 */; };
 		E6D07B7C19A117DB001E2F41 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D07B7B19A117DB001E2F41 /* Budget.m */; };
 		E6D07B8219A3899F001E2F41 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D07B8119A3899F001E2F41 /* Transaction.m */; };
+		E6E1DF7619A4F83800ADFA39 /* CashTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E1DF7519A4F83800ADFA39 /* CashTransaction.m */; };
+		E6E1DF7919A579D400ADFA39 /* CreditCardTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E1DF7819A579D400ADFA39 /* CreditCardTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,10 @@
 		E6D07B7B19A117DB001E2F41 /* Budget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Budget.m; sourceTree = "<group>"; };
 		E6D07B8019A3899F001E2F41 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		E6D07B8119A3899F001E2F41 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		E6E1DF7419A4F83800ADFA39 /* CashTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashTransaction.h; sourceTree = "<group>"; };
+		E6E1DF7519A4F83800ADFA39 /* CashTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashTransaction.m; sourceTree = "<group>"; };
+		E6E1DF7719A579D400ADFA39 /* CreditCardTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardTransaction.h; sourceTree = "<group>"; };
+		E6E1DF7819A579D400ADFA39 /* CreditCardTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardTransaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,10 @@
 				E6D07B7B19A117DB001E2F41 /* Budget.m */,
 				E6D07B8019A3899F001E2F41 /* Transaction.h */,
 				E6D07B8119A3899F001E2F41 /* Transaction.m */,
+				E6E1DF7419A4F83800ADFA39 /* CashTransaction.h */,
+				E6E1DF7519A4F83800ADFA39 /* CashTransaction.m */,
+				E6E1DF7719A579D400ADFA39 /* CreditCardTransaction.h */,
+				E6E1DF7819A579D400ADFA39 /* CreditCardTransaction.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -158,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D07B8219A3899F001E2F41 /* Transaction.m in Sources */,
+				E6E1DF7919A579D400ADFA39 /* CreditCardTransaction.m in Sources */,
+				E6E1DF7619A4F83800ADFA39 /* CashTransaction.m in Sources */,
 				E6D07B7C19A117DB001E2F41 /* Budget.m in Sources */,
 				851E4B7819932D79008AC828 /* main.m in Sources */,
 			);

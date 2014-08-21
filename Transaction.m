@@ -7,20 +7,26 @@
 //
 
 #import "Transaction.h"
+#import "Budget.h"
 
 @implementation Transaction
 
-- (void) create: (double) theAmount ofType: (transactionType) aType {
-    type = aType;
-    amount = @(theAmount);
+//- (void) create: (double) theAmount ofType: (transactionType) aType {
+//    type = aType;
+//    amount = @(theAmount);
+//}
+
+- (void) create: (double) amountValue for: (Budget*) budgetValue {
+    budget = budgetValue;
+    amount = @(amountValue);
 }
 
-- (NSNumber*) amount {
-    return amount;
+- (void) spend {
+    // Fill in the method in subclasses
 }
 
-- (transactionType) type {
-    return type;
+- (void) trackSpending: (double) amountValue {
+    NSLog(@"You are about to spend another %.2f", amountValue);
 }
 
 @end
